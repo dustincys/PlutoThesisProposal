@@ -1,0 +1,88 @@
+% !Mode:: "TeX:UTF-8"
+
+\def\xuewei{Doctor} % 定义学位 Doctor or Master
+
+\documentclass[cs4size,openany,UTF8,nofonts]{ctexbook}
+\usepackage[a4paper,text={160true mm,234true mm},top=30.5true mm,left=25true mm,head=5true mm,headsep=2.5true mm,foot=8.5true mm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{ntheorem}
+\usepackage{titlesec}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage[boxed,linesnumbered,algochapter]{algorithm2e}	
+
+\usepackage[xetex,
+            bookmarksnumbered=true,
+            bookmarksopen=true,
+            colorlinks=false,
+            pdfborder={0 0 1},
+            citecolor=blue,
+            linkcolor=red,
+            anchorcolor=green,
+            urlcolor=blue,
+            breaklinks=true,
+            naturalnames  %与algorithm2e宏包协调
+            ]{hyperref}
+%\usepackage[BoldFont,normalindentfirst,BoldFont,SlantFont]{xeCJK}
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetemboldenfactor{1}%只对随后定义的CJK字体有效
+\setCJKfamilyfont{hei}{SimHei}
+\xeCJKsetemboldenfactor{4}
+\setCJKfamilyfont{song}{SimSun}
+\xeCJKsetemboldenfactor{1}
+\setCJKfamilyfont{fs}{FangSong}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{li}{LiSu}
+\setCJKfamilyfont{xw}{STXinwei}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\newcommand{\heiti}{\CJKfamily{hei}}% 黑体   (Windows自带simhei.ttf)
+\newcommand{\songti}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体 (Windows自带simfs.ttf)
+\newcommand{\kaishu}{\CJKfamily{kai}}      % 楷体   (Windows自带simkai.ttf)
+\newcommand{\li}{\CJKfamily{li}}        % 隶书   (Windows自带simli.ttf)
+\newcommand{\xw}{\CJKfamily{xw}}        % 隶书   (Windows自带simli.ttf)
+\newfontfamily\arial{Arial}
+\newfontfamily\timesnewroman{Times New Roman}
+
+\begin{document}
+
+\newif\ifxueweidoctor
+\newif\ifxueweimaster
+\def\temp{Doctor}
+\ifx\temp\xuewei
+  \xueweidoctortrue  \xueweimasterfalse
+\fi
+\def\temp{Master}
+\ifx\temp\xuewei
+  \xueweidoctorfalse  \xueweimastertrue
+\fi
+
+\input{format}
+\input{cover}
+\zihao{-4}
+
+\chapter{局部多孔质气体静压轴承关键技术的研究}
+\input{body/figures}
+\input{body/tables}
+\input{body/equations}
+\input{body/others}
+
+
+\bibliographystyle{GBT7714-2005NLang-HIT}
+\addtolength{\bibsep}{-0.8em}
+\nocite{*}
+\bibliography{reference}
+
+\end{document} 
