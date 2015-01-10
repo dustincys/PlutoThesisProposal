@@ -52,25 +52,25 @@ Ubuntu (Ubuntu 14.04, texlive 2013, 已测):
 
 ## 目录结构
 
-├── body
-│   ├── equations.tex
-│   ├── figures.tex
-│   ├── others.tex
-│   └── tables.tex
-├── clean.bat
-├── cover.tex
-├── figures
-│   ├── golfer.eps
-│   ├── latex.eps
-│   ├── list.eps
-│   ├── pdf.eps
-│   └── word.eps
-├── format.tex
-├── GBT7714-2005NLang-HIT.bst
-├── GBT7714-2005NLang-HIT.bst.tex
-├── main.pdf
-├── main.tex
-├── Makefile
-├── readme.md
-└── reference.bib
+	├── body
+	│   ├── equations.tex
+	│   ├── figures.tex
+	│   ├── others.tex
+	│   └── tables.tex
+	├── clean.bat
+	├── cover.tex
+	├── figures
+	│   ├── golfer.eps
+	│   ├── latex.eps
+	│   ├── list.eps
+	│   ├── pdf.eps
+	│   └── word.eps
+	├── format.tex
+	├── GBT7714-2005NLang-HIT.bst
+	├── GBT7714-2005NLang-HIT.bst.tex
+	├── main.pdf
+	├── main.tex
+	├── Makefile
+	├── readme.md
+	└── reference.bib
 
