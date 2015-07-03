@@ -1,20 +1,24 @@
 % !Mode:: "TeX:UTF-8"
 
 \def\xuewei{Doctor} % 定义学位 Doctor or Master
-
-\documentclass[cs4size,openany,UTF8,nofonts]{ctexbook}
+\documentclass[cs4size,openany,oneside,UTF8,nofonts]{ctexbook}
 \usepackage[a4paper,text={160true mm,234true mm},top=30.5true mm,left=25true mm,head=5true mm,headsep=2.5true mm,foot=8.5true mm]{geometry}
+\usepackage{ccaption}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{caption}
 \usepackage{amsmath}
-\usepackage{txfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bigints}
 \usepackage{bm}
+\usepackage{txfonts}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{ntheorem}
 \usepackage{titlesec}
+\usepackage{titletoc}                   % 控制目录的宏包
 \usepackage{subfigure}
 \usepackage{tabularx}
 \usepackage[sort&compress,numbers]{natbib}
@@ -56,7 +60,41 @@
 \newfontfamily\arial{Arial}
 \newfontfamily\timesnewroman{Times New Roman}
 
+
+\newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 1.倍行距
+\newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 1.倍行距
+\newcommand{\erhao}{\fontsize{22pt}{1.25\baselineskip}\selectfont}       % 二号, 1.倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.倍行距
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.0倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
+\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
+
+\newcommand\litem[1]{\item{\heiti#1\hspace{1.5em}}}
+
+\newenvironment{listitem}{\begin{enumerate}[label={（\arabic*）},itemindent=2em]}{\end{enumerate}}
+
+\usepackage[boxed,linesnumbered,algochapter]{algorithm2e}  % 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表 
+\renewcommand{\algorithmcfname}{算法}
+
+\usepackage{tikz,mathpazo}
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\newcommand{\citeayu}[1]{\citeauthor{#1}~(\citeyear{#1})\citeup{#1}}
+
 \begin{document}
+
+\titleformat{\chapter}{\center\xiaoer\hei}{\chaptertitlename}{0em}{}
+\titlespacing{\chapter}{0pt}{0.5\bseieskip}{0.5\bseieskip}
+\titleformat{\section}{\xiaosan\hei}{\thesection}{0em}{}
+\titlespacing{\section}{0pt}{0.5\bseieskip}{0.5\bseieskip}
+\titleformat{\subsection}{\sihao\hei}{\thesubsection}{0em}{}
+\titlespacing{\subsection}{0pt}{0.5\bseieskip}{0.5\bseieskip}
+\titleformat{\subsubsection}{\xiaosi\hei}{\thesubsubsection}{0em}{}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
 
 \newif\ifxueweidoctor
 \newif\ifxueweimaster
@@ -72,8 +110,8 @@
 \input{format}
 \input{cover}
 \zihao{-4}
-
-\chapter{局部多孔质气体静压轴承关键技术的研究}
+\tableofcontents    % 中文目录
+\chapter*{局部多孔质气体静压轴承关键技术的研究}
 \input{body/figures}
 \input{body/tables}
 \input{body/equations}
