@@ -2,6 +2,7 @@ all:
 	xelatex main.tex;
 	xelatex main.tex;
 	bibtex main || true;
+	sed -i -e 's/\(\\bibitem\[.*\)et al.\(.*\]\)/\1等\2/g' main.bbl;
 	xelatex main.tex;
 	xelatex main.tex;
 clean:
