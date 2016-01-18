@@ -81,7 +81,7 @@
 % 封面、摘要、版权、致谢格式定义
 \makeatletter
 \def\title#1{\def\@title{#1}}\def\@title{}
-\def\titlesec#1{\def\@titlesec{&\rule[-4pt]{200pt}{1pt}\hspace{-326pt}\centerline{\textbf{#1}}}}\def\@titlesec{}
+\def\titlesec#1{\def\@titlesec{\rule[-4pt]{200pt}{1pt}\hspace{-326pt}\centerline{\textbf{#1}}}}\def\@titlesec{}
 \def\affil#1{\def\@affil{#1}}\def\@affil{}
 \def\subject#1{\def\@subject{#1}}\def\@subject{}
 \def\author#1{\def\@author{#1}}\def\@author{}
@@ -103,12 +103,12 @@
     \zihao{-2}\vspace*{10mm}
 		\renewcommand{\CJKglue}{\hskip 2pt plus 0.08\baselineskip}
     \centerline{\songti\textbf{题目：\textbf\@title}}
+		\centerline{\hspace{10em}\songti\textbf{\textbf\@titlesec}}
 		\renewcommand{\CJKglue}{\hskip 0pt plus 0.08\baselineskip}
     \zihao{3}\vspace{4\baselineskip}
     \hspace*{36pt}{\songti
 	\renewcommand{\arraystretch}{1.3}
     \begin{tabular}{l@{}l}
-	\@titlesec\\
     \textbf{院\hfill (系)}   & \rule[-4pt]{200pt}{1pt}\hspace{-326pt}\centerline{\textbf\@affil}\\
     \textbf{学\hfill 科}     & \rule[-4pt]{200pt}{1pt}\hspace{-326pt}\centerline{\textbf\@subject}\\
     \textbf{导\hfill 师}     & \rule[-4pt]{200pt}{1pt}\hspace{-326pt}\centerline{\textbf\@supervisor}\\
